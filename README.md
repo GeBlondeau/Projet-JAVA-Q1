@@ -33,10 +33,11 @@ ETCS2: European Credit Transfer and Accumulation System en anglais, et système 
 
 
 
-Lien Github : https://github.com/GeBlondeau/Projet-JAVA-Q1
+
 
 	-------------------------------------------------------------------------------------------------------
 
 
  1: https://fr.wikipedia.org/wiki/Monopoly
+ 
  2: http://www.usaintlouis.be/sl/515.html
