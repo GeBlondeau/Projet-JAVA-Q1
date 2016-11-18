@@ -1,11 +1,11 @@
-				               				Ephecopoly
+                                                   #Ephecopoly
   
  Noé Lambin 2TL1
  Gérault Blondeau 2TL1
 
 
 
-Principe général
+##Principe général
 
 Nous allons créer le jeu Ephecopoly. Il sera basé sur le principe du monopoly1.
 
