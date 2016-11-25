@@ -2,6 +2,7 @@
  * 
  */
 package projetJAVA;
+import java.util.ArrayList;
 
 /**
  * @author Gérault
@@ -9,7 +10,7 @@ package projetJAVA;
  */
 public class Jeux {
 	static int position;
-
+	private static ArrayList<String> listeJoueur;
 
 	public int lanceDes(){
 		Random rand = new Random();
