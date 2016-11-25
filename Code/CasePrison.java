@@ -7,7 +7,7 @@ package projetJAVA;
  * @author Gérault
  *
  */
-public class CasePrison {
+public class CasePrison extends Case{
 
 	
 	
