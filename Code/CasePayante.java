@@ -1,7 +1,7 @@
 /**
  * 
  */
-package projet_java;
+package projetJAVA;
 
 /**
  * @author Noé Lambin

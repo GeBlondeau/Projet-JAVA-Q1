@@ -4,15 +4,19 @@
 package projetJAVA;
 
 /**
- * @author GÃ©rault
+ * @author Gérault
  *
  */
-public class CasePrison extends Case{
+public class CasePrison extends Case {
 
 	
 	
+	public CasePrison(boolean achetable) {
+		super(achetable);
+	}
+
 	public void purgerLaPeine(){
-		if (Etudiant.etatPrison > 0) // si etatPrison de la classe Etudiant Ã©gal Ã  zero alors jouer
-			Etudiant.etatPrison --; //sinon dÃ©sincrementer l'etat de 1
+		if (Etudiant.etatPrison > 0) // si etatPrison de la classe Etudiant égal à zero alors jouer
+			Etudiant.etatPrison --; //sinon désincrementer l'etat de 1
 	}
 }
