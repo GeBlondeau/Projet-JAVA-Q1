@@ -4,15 +4,15 @@
 package projetJAVA;
 
 /**
- * @author GÈrault
+ * @author G√©rault
  *
  */
 public class CasePrison {
 
 	
 	
-	public void prison(){
-		if (Etudiant.etatPrison > 0) // si etatPrison de la classe Etudiant Ègal ‡ zero alors jouer
-			Etudiant.etatPrison --; //sinon dÈsincrementer l'etat de 1
+	public void purgerLaPeine(){
+		if (Etudiant.etatPrison > 0) // si etatPrison de la classe Etudiant √©gal √† zero alors jouer
+			Etudiant.etatPrison --; //sinon d√©sincrementer l'etat de 1
 	}
 }
