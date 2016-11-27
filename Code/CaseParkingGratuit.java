@@ -4,12 +4,12 @@
 package projetJAVA;
 
 /**
- * @author Gérault
+ * @author GÃ©rault
  *
  */
-public class CaseParkingGratuis extends Case {
+public class CaseParkingGratuit extends Case {
 
-	public CaseParkingGratuis(boolean achetable) {
+	public CaseParkingGratuit(boolean achetable) {
 		super(achetable);
 	}
 
