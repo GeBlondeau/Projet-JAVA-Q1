@@ -1,18 +1,17 @@
-/**
- * 
- */
-package projetJAVA;
+package projet_java;
 
-/**
- * @author Gérault
- *
- */
-public class Etudiant extends Solvable{
-	static int etatPrison;
+public class Etudiant extends Solvable {
 	
-	public Etudiant(int ects){
-		super (ects);
-		Solvable.ects = ects;
+	int etatPrison;
+	
+	public Etudiant(int ects, int etatPrison){
+		super(ects);
+		this.etatPrison = etatPrison;
 	}
-
+	
+	public void main(String arg[]){
+		Etudiant etu = new Etudiant(50, 0);
+		
+		
+	}
 }
