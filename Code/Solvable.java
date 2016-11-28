@@ -1,17 +1,12 @@
-/**
- * 
- */
-package projetJAVA;
+package projet_java;
 
-/**
- * @author Gérault
- *
- */
-public class Solvable{
+public class Solvable {
+	
 	static int ects;
 	
 	public Solvable(int ects){
-		Solvable.ects = ects;
-		
+		this.ects = ects;
 	}
+
+
 }
