@@ -9,7 +9,7 @@
 
 ##Principe général
 
-Nous allons créer le jeu Ephecopoly. Il sera basé sur le principe du monopoly1.
+Nous allons créer le jeu Ephecopoly. Il sera basé sur le principe du monopoly.
 
 Monopoly: est un jeu qui consiste à ruiner ses concurrents par des opérations immobilières. Les fortunes se faisant et se défaisant au fil des coups de dés.
 
