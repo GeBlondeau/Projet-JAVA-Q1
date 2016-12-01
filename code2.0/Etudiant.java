@@ -1,4 +1,4 @@
-package Projet;
+package Ephecopoly;
 
 import java.util.Random;
 

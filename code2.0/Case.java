@@ -1,10 +1,10 @@
-package Projet;
+package Ephecopoly;
 
 public class Case {
 	
 	private int prixAchat;
 	private int prixLoyer;
-	private String proprietaire;
+	private Etudiant proprietaire;
 	private String nomCase;
 	private int positionCase;
 	private boolean achetable;
@@ -15,10 +15,10 @@ public class Case {
 	public int getPrixLoyer() {
 		return prixLoyer;
 	}
-	public String getProprietaire() {
+	public Etudiant getProprietaire() {
 		return proprietaire;
 	}
-	public void setProprietaire(String proprietaire) {
+	public void setProprietaire(Etudiant proprietaire) {
 		this.proprietaire = proprietaire;
 	}
 	public String getNomCase() {
@@ -31,7 +31,7 @@ public class Case {
 		return achetable;
 	}
 
-	public Case(int prixAchat, int prixLoyer, String proprietaire, String nomCase
+	public Case(int prixAchat, int prixLoyer, Etudiant proprietaire, String nomCase
 			, int positionCase, boolean achetable) {
 		this.prixAchat = prixAchat;
 		this.prixLoyer = prixLoyer;

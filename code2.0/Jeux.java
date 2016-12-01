@@ -53,7 +53,7 @@ public class Jeux{
 								etudiant.setPositionJoueur(etudiant.getPositionJoueur() + deplacement);
 								
 								if(etudiant.getPositionJoueur() < 40);
-								else {etudiant.setPositionJoueur(etudiant.getPositionJoueur() - 40);
+								else {etudiant.setPositionJoueur(etudiant.getPositionJoueur()-40);
 									etudiant.setEcts(15);}
 								Case cours = plateau.listeCase.get(etudiant.getPositionJoueur());
 								affiche("Vous êtes arrivé sur " + cours.getNomCase() + ".");
@@ -71,7 +71,7 @@ public class Jeux{
 												switch(achat){
 												case "Y" :
 													etudiant.setEcts( - cours.getPrixAchat());
-													cours.setProprietaire(etudiant.getNomEtudiant());
+													cours.setProprietaire(etudiant);
 													affiche("Félicitation vous venez de réussir le cours de " 
 															+ cours.getNomCase() + ".");
 													affiche("Il vous reste " + etudiant.getEcts() + " ects.");
@@ -96,8 +96,10 @@ public class Jeux{
 								else if(cours.getAchetable() && cours.getProprietaire() != null){
 									affiche("Le cours a déjà été réussi par : " + cours.getProprietaire() + ".");
 									int loyer = cours.getPrixLoyer();
-									etudiant.setEcts(loyer);
+									etudiant.setEcts(-loyer);
+									cours.getProprietaire().setEcts(loyer);
 									affiche("Vous devez lui payer : " + loyer + " ects.");
+									affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
 								}
 								else {
 									int position = cours.getPositionCase();
@@ -109,13 +111,13 @@ public class Jeux{
 										break;
 									case 2 :
 										int interro1 = cours.getPrixLoyer() * deplacement;
-										etudiant.setEcts(interro1);
+										etudiant.setEcts(-interro1);
 										affiche("Interro surprise, vous ratez " + interro1 + " ects.");
 										affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
 										break;
 									case 4 :
 										int examen1 = cours.getPrixLoyer();
-										etudiant.setEcts(examen1);
+										etudiant.setEcts(-examen1);
 										affiche("Vous arrivez en retard à l'examen, vous ratez " 
 												+ examen1 + " ects.");
 										affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
@@ -153,7 +155,7 @@ public class Jeux{
 										break;
 									case 33 :
 										int interro3 = cours.getPrixLoyer() * deplacement;
-										etudiant.setEcts(interro3);
+										etudiant.setEcts(-interro3);
 										affiche("Interro surprise, vous ratez " + interro3 + " ects.");
 										affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
 										break;
@@ -164,7 +166,7 @@ public class Jeux{
 										break;
 									case 38 :
 										int examen2 = cours.getPrixLoyer();
-										etudiant.setEcts(examen2);
+										etudiant.setEcts(-examen2);
 										affiche("Vous arrivez en retard à l'examen, vous ratez " 
 												+ examen2 + " ects.");
 										affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
@@ -183,7 +185,8 @@ public class Jeux{
 						}
 						else {
 							etudiant.setEtatPrison(etudiant.getEtatPrison()-1);
-							affiche("Vous êtes en Prison pour encore : " + etudiant.getEtatPrison() + " tour(s).");
+							affiche("Vous êtes en Prison pour encore : " + etudiant.getEtatPrison() + 1 
+									+ " tour(s).");
 						}
 					}
 					catch(InputMismatchException e){
@@ -195,4 +198,4 @@ public class Jeux{
 			}
 		
 	}
-}	
+}

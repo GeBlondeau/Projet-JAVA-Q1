@@ -1,4 +1,4 @@
-package Projet;
+package Ephecopoly;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +75,7 @@ public class Plateau {
 			Case C14=new Case(17,7,null,"Initiation chapitre2",14,true);
 			Case C15=new Case(5,2,null,"HTML",15,true);
 			Case C16=new Case(14,4,null,"Réseau théorie",16,true);
-			Case C17=new Case(0,3,null,"Interrogation",17,false);
+			Case C17=new Case(0,2,null,"Interrogation",17,false);
 			Case C18=new Case(15,4,null,"Réseau pratique",18,true);
 			Case C19=new Case(16,9,null,"Réseau 2ème",19,true);
 			Case C20=new Case(0,0,null,"Parking Gratuit",20,false);	
@@ -95,7 +95,7 @@ public class Plateau {
 		//Quatrieme ligne
 			Case C31=new Case(25,14,null,"Développement application théorie",31,true);
 			Case C32=new Case(20,14,null,"Développement application pratique",32,true);
-			Case C33=new Case(0,3,null,"Interrogation",33,false);
+			Case C33=new Case(0,2,null,"Interrogation",33,false);
 			Case C34=new Case(25,4,null,"Développement application projet",34,true);
 			Case C35=new Case(5,2,null,"SQL",35,true);
 		    Case C36=new Case(0,0,null,"Chance",36,false);
