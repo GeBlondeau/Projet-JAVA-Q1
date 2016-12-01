@@ -1,4 +1,4 @@
-package Projet;
+package Ephecopoly;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -53,7 +53,7 @@ public class Jeux{
 								etudiant.setPositionJoueur(etudiant.getPositionJoueur() + deplacement);
 								
 								if(etudiant.getPositionJoueur() < 40);
-								else {etudiant.setPositionJoueur(-40);
+								else {etudiant.setPositionJoueur(etudiant.getPositionJoueur() - 40);
 									etudiant.setEcts(15);}
 								Case cours = plateau.listeCase.get(etudiant.getPositionJoueur());
 								affiche("Vous êtes arrivé sur " + cours.getNomCase() + ".");
@@ -195,4 +195,4 @@ public class Jeux{
 			}
 		
 	}
-}
+}	
