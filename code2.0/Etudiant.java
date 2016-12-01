@@ -2,8 +2,27 @@ package Projet;
 
 import java.util.Random;
 
-public class Etudiant{
+public class Etudiant {
 	
+	public int getEcts() {
+		return ects;
+	}
+	public void setEcts(int ects) {
+		this.ects = ects;
+	}
+	public int getEtatPrison() {
+		return etatPrison;
+	}
+	public void setEtatPrison(int etatPrison) {
+		this.etatPrison = etatPrison;
+	}
+	public int getPositionJoueur() {
+		return positionJoueur;
+	}
+	public void setPositionJoueur(int positionJoueur) {
+		this.positionJoueur = positionJoueur;
+	}
+
 	int ects;
 	int etatPrison;
 	int positionJoueur;
