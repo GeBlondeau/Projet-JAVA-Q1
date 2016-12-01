@@ -41,25 +41,47 @@ public class Jeux extends Observable{
 				for (Etudiant elem: listeJoueur){
 					try{
 						
-						System.out.println("------------------------------");
+						affiche("------------------------------");
+						affiche(elem.toString());
 						
 						affiche("Pour lancer les dés appuyer sur une touche du clavier et faites enter.");
 						String c = sc.next();
 						if(c.length()==1){
+							
 							int deplacement = elem.lanceDes();
-							affiche("La valeur des dés est : " + deplacement);
+							affiche("La valeur des dés est : " + deplacement + ".");
 							elem.positionJoueur = elem.positionJoueur + deplacement;
-							if(elem.positionJoueur < 40){
-								affiche("Vous êtes maintenant sur la " + elem.positionJoueur + "° case du plateau");
-								Case cours = plateau.listeCase.get(elem.positionJoueur);
-								affiche("La case s'appelle : " + cours.getNomCase());
+							
+							if(elem.positionJoueur < 40);
+							else {elem.positionJoueur -= 40;
+								elem.ects += 25;}
+							Case cours = plateau.listeCase.get(elem.positionJoueur);
+							affiche("Vous êtes arrivé sur " + cours.getNomCase() + ".");
+							
+							if(cours.getAchetable()){
+								affiche("La case coùte " + cours.getPrixAchat() + " ects.");
+								affiche("Il vous reste " + elem.ects +" ects.");
+								affiche("Acheter la case oui : Y, non : N.");
+								
+								String achat = sc.next();
+								if(achat.length()==1){
+									switch(achat){
+									case "Y" :
+										elem.ects -= cours.getPrixAchat();
+										cours.setProprietaire(elem.toString());
+										affiche("Félicitation vous venez d'acheter " + cours.getNomCase() + ".");
+										affiche("Il vous reste " + elem.ects + " ects.");
+										break;
+									case "N" :
+										affiche("Dommage une prochaine fois peut-être.");
+									}	
+								}
+								else break;
 							}
-							else {
-								elem.positionJoueur -= 40;
-								affiche("Vous êtes maintenant sur la " + elem.positionJoueur + "° case du plateau");
-								Case cours = plateau.listeCase.get(elem.positionJoueur);
-								affiche("La case s'appelle : " + cours.getNomCase());
+							else{
+								affiche("La case n'est pas achetable.");
 							}
+							
 						}
 						else break;
 					}
