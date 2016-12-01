@@ -43,10 +43,10 @@ public class Jeux extends Observable{
 						
 						System.out.println("------------------------------");
 						
-						int deplacement = elem.lanceDes();
-						affiche("Pour voir la valeur des dés appuyer sur une touche et faites enter.");
+						affiche("Pour lancer les dés appuyer sur une touche du clavier et faites enter.");
 						String c = sc.next();
 						if(c.length()==1){
+							int deplacement = elem.lanceDes();
 							affiche("La valeur des dés est : " + deplacement);
 							elem.positionJoueur = elem.positionJoueur + deplacement;
 							if(elem.positionJoueur < 40){
@@ -58,7 +58,7 @@ public class Jeux extends Observable{
 								elem.positionJoueur -= 40;
 								affiche("Vous êtes maintenant sur la " + elem.positionJoueur + "° case du plateau");
 								Case cours = plateau.listeCase.get(elem.positionJoueur);
-								affiche("La case s'appelle : " + cours.getPrixLoyer());
+								affiche("La case s'appelle : " + cours.getNomCase());
 							}
 						}
 						else break;
