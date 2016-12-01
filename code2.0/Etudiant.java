@@ -8,7 +8,7 @@ public class Etudiant {
 		return ects;
 	}
 	public void setEcts(int ects) {
-		this.ects = ects;
+		this.ects += ects;
 	}
 	public int getEtatPrison() {
 		return etatPrison;
@@ -22,15 +22,20 @@ public class Etudiant {
 	public void setPositionJoueur(int positionJoueur) {
 		this.positionJoueur = positionJoueur;
 	}
+	public String getNomEtudiant() {
+		return nomEtudiant;
+	}
 
-	int ects;
-	int etatPrison;
-	int positionJoueur;
+	private int ects;
+	private int etatPrison;
+	private int positionJoueur;
+	private String nomEtudiant;
 
-	public Etudiant(int ects, int etatPrison, int positionJoueur){
+	public Etudiant(int ects, int etatPrison, int positionJoueur, String nomEtudiant){
 		this.ects = ects;
 		this.etatPrison = etatPrison;
 		this.positionJoueur = positionJoueur;
+		this.nomEtudiant = nomEtudiant;
 	}
 	
 	public int lanceDes(){
