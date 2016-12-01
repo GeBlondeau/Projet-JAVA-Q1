@@ -1,22 +1,35 @@
-package Ephecopoly;
+package Projet;
 
-public class Etudiant {
+import java.util.Random;
+
+public class Etudiant{
 	
 	int ects;
 	int etatPrison;
-	
-	public Etudiant(int ects, int etatPrison){
+	int positionJoueur;
+
+	public Etudiant(int ects, int etatPrison, int positionJoueur){
 		this.ects = ects;
 		this.etatPrison = etatPrison;
+		this.positionJoueur = positionJoueur;
 	}
 	
-	public static String affiche(Etudiant x){
-		String a = "Argent du joueur : " + x.ects + "\n";
-		a += "Etat de prison : " + x.etatPrison;
-		return a;
+	public int lanceDes(){
+		Random rand = new Random();
+		int nombre1 = 1 + rand.nextInt(7-1); //Entre 1 et 6 
+		int nombre2 = 1 + rand.nextInt(7-1); //Entre 1 et 6
+		int valeur =  nombre1 + nombre2; //Additionner les deux dés à la position actuel du joueur
+		return valeur;
 	}
 	
-	public static void main(String arg[]){
+	public void affiche(String string){
+		System.out.println(string);
+	}
+	public void acheterCase(){
+		
+	}
+	
+	public void main(String arg[]){
 		
 	}
 }
