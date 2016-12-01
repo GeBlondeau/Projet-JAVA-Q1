@@ -54,13 +54,13 @@ public class Plateau {
 	}
 	
 	// Plateau Ephecopoly
-			Case C0=new Case(0,0,null,"Case de départ",0,false);
+			Case C0=new Case(0,15,null,"Case de départ",0,false);
 		//Premiere ligne
 							//Prix d'achats, prix du loyer, propriétaire, nom de la case, position 
 			Case C1=new Case(10,3,null,"Introduction télécom",1,true);
 			Case C2=new Case(0,2,null,"Interrogation",2,false);
 		    Case C3=new Case(7,2,null,"Télécommunication",3,true);
-		    Case C4=new Case(0,4,null,"Examen",4,false);
+		    Case C4=new Case(0,15,null,"Examen",4,false);
 		    Case C5=new Case(5,2,null,"Javascript",5,true);
 			Case C6=new Case(20,7,null,"Mathématique complexe",6,true);
 			Case C7=new Case(0,0,null,"Chance",7,false);
@@ -75,7 +75,7 @@ public class Plateau {
 			Case C14=new Case(17,7,null,"Initiation chapitre2",14,true);
 			Case C15=new Case(5,2,null,"HTML",15,true);
 			Case C16=new Case(14,4,null,"Réseau théorie",16,true);
-			Case C17=new Case(0,2,null,"Interrogation",17,false);
+			Case C17=new Case(0,3,null,"Interrogation",17,false);
 			Case C18=new Case(15,4,null,"Réseau pratique",18,true);
 			Case C19=new Case(16,9,null,"Réseau 2ème",19,true);
 			Case C20=new Case(0,0,null,"Parking Gratuit",20,false);	
@@ -88,14 +88,14 @@ public class Plateau {
 			Case C25=new Case(2,5,null,"CSS",25,true);
 			Case C26=new Case(20,11,null,"Os théorie",26,true);
 			Case C27=new Case(19,9,null,"Os pratique",27,true);
-			Case C28=new Case(6,2,null,"Nérlandais",28,true);
+			Case C28=new Case(6,2,null,"Néerlandais",28,true);
 			Case C29=new Case(20,8,null,"Os oral",29,true);
 			Case C30=new Case(0,0,null,"Allez en Prison",30,false);	
 
 		//Quatrieme ligne
 			Case C31=new Case(25,14,null,"Développement application théorie",31,true);
 			Case C32=new Case(20,14,null,"Développement application pratique",32,true);
-			Case C33=new Case(0,2,null,"Interrogation",33,false);
+			Case C33=new Case(0,3,null,"Interrogation",33,false);
 			Case C34=new Case(25,4,null,"Développement application projet",34,true);
 			Case C35=new Case(5,2,null,"SQL",35,true);
 		    Case C36=new Case(0,0,null,"Chance",36,false);
