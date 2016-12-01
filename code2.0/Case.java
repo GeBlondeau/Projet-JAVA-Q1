@@ -1,4 +1,4 @@
-package Ephecopoly;
+package Projet;
 
 public class Case {
 	
@@ -40,6 +40,55 @@ public class Case {
 		this.positionCase = positionCase;
 		this.achetable = achetable;
 		
+	}
+	public void affiche(String string){
+		System.out.println(string);
+	}
+	
+	public void caseDepart(Etudiant etudiant, Case cours){
+		etudiant.setEcts(cours.getPrixLoyer());
+		affiche("Vous venez de recevoir 25 ects, vous avez maintenant " 
+				+ etudiant.getEcts() + " ects.");
+	}
+	public void caseInterro(Etudiant etudiant, Case cours, int deplacement){
+		int interro = cours.getPrixLoyer() * deplacement;
+		etudiant.setEcts(-interro);
+		
+		affiche("Interro surprise, vous ratez " + interro + " ects.");
+		affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
+	}
+	public void caseExamen(Etudiant etudiant, Case cours){
+		int examen = cours.getPrixLoyer();
+		etudiant.setEcts(-examen);
+		affiche("Vous arrivez en retard à l'examen, vous ratez " 
+				+ examen + " ects.");
+		affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
+	}
+	public void caseChance(Etudiant etudiant, int deplacement){
+		etudiant.setEcts(deplacement);
+		affiche("Félicitation vous avez " + deplacement + " ects en plus.");
+		affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
+	}
+	public void caseMalchance(Etudiant etudiant, int deplacement){
+		etudiant.setEcts(-deplacement);
+		affiche("Dommage vous avez " + deplacement + " ects en moins.");
+		affiche("Vous avez maintenant " + etudiant.getEcts() + " ects.");
+	}
+	public void caseVisitePrison(Etudiant etudiant){
+		affiche("Vous visitez la prison.");
+		affiche("Vous avez toujours " + etudiant.getEcts() + " ects.");
+	}
+	public void caseParkingGratuit(Etudiant etudiant){
+		affiche("Félicitation vous avez trouver une place de parking "
+				+ "gratuit autour de l'ephec.");
+		affiche("Vous avez toujours " + etudiant.getEcts() + " ects.");
+	}
+	public void caseAllerEnPrison(Etudiant etudiant){
+		etudiant.setPositionJoueur(10);
+		etudiant.setEtatPrison(2);
+		affiche("Aller directement en prison sans passer par la case départ,"
+				+ " vous resterez emprisonner 2 tours.");
+		affiche("Vous avez toujours " + etudiant.getEcts() + " ects.");
 	}
 	
 }

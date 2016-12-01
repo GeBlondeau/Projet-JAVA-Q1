@@ -1,4 +1,4 @@
-package Ephecopoly;
+package Projet;
 
 import java.util.Random;
 
@@ -49,8 +49,16 @@ public class Etudiant {
 	public void affiche(String string){
 		System.out.println(string);
 	}
-	public void acheterCase(){
-		
+	public void lancementTourEtudiant(Etudiant etudiant, Jeux jeu, Plateau plateau){
+		if(etudiant.getEtatPrison() == 0){
+			
+			jeu.affichage(plateau, etudiant, jeu);
+		}
+		else {
+			affiche("Vous êtes en Prison pour encore : " + etudiant.getEtatPrison()  
+					+ " tour(s).");
+			etudiant.setEtatPrison(etudiant.getEtatPrison()-1);
+		}
 	}
 	
 	public void main(String arg[]){

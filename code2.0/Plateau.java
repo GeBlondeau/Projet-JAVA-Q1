@@ -1,4 +1,4 @@
-package Ephecopoly;
+package Projet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +9,16 @@ public class Plateau {
 	
 	private void remplirListe(Case cour){
 		listeCase.add(cour);
+	}
+	public void affiche(String string){
+		System.out.println(string);
+	}
+	public void positionEtudiant(Plateau plateau, Etudiant etudiant){
+		if(etudiant.getPositionJoueur() < 40);
+		else{
+			etudiant.setPositionJoueur(etudiant.getPositionJoueur()-40);
+			etudiant.setEcts(15);
+		}
 	}
 	public void creationPlateau(){
 		remplirListe(C0);
