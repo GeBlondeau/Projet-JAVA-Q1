@@ -6,50 +6,49 @@ import ephecopoly.view.*;
 public class JeuxController {
 	
 	private Jeux jeu;
-	private Etudiant etudiant;
-	private Case cours;
-	private Plateau plateau;
+	
 	public JeuxVue vue = null;
 	
-	public JeuxController(Jeux model, Etudiant etudiant, Case cours, Plateau plateau){
+	public JeuxController(Jeux model){
 		this.jeu = model;
-		this.etudiant = etudiant;
-		this.cours = cours;
-		this.plateau = plateau;
 	}
 	
-	public void setEcts(int ects){
-		etudiant.setEcts(ects);
-		controlerCredit();
+	public void setEcts(Etudiant etudiant, int ects){
+		jeu.setEcts(etudiant, ects);
+		controlerCredit(etudiant);
 	}
-	public void setEtatPrison(int etatPrison){
-		etudiant.setEtatPrison(etatPrison);
+	public void setEtatPrison(Etudiant etudiant, int etatPrison){
+		jeu.setEtatPrison(etudiant, etatPrison);
 	}
-	public void setPositionEtudiant(int positionJoueur){
-		etudiant.setPositionEtudiant(positionJoueur);
-		controlerPosition();
+	public void setPositionEtudiant(Etudiant etudiant, int positionJoueur){
+		jeu.setPositionEtudiant(etudiant, positionJoueur);
+		controlerPosition(etudiant);
 	}
-	public void setProprietaire(Etudiant proprietaire){
-		cours.setProprietaire(proprietaire);
+	public void setProprietaire(Etudiant proprietaire, Case cours){
+		jeu.setProprietaire(proprietaire, cours);
 	}
-	
+	public void setJeuEtudiant(Etudiant etudiant, boolean jeuEtudiant) {
+		jeu.setJeuEtudiant(etudiant, jeuEtudiant);
+	}
 	
 	public void addView(JeuxVue vue){
 		this.vue = vue;
 	}
-	public void controlerCredit(){
+	public void controlerCredit(Etudiant etudiant){
 		if (vue != null){
-			if (etudiant.getEcts() <=0){
-				jeu.finDuJeu();
+			if (jeu.getEcts(etudiant) <= 0){
+				jeu.finDuJeu(etudiant);
+			}
+			else{
 			}
 		}
 	}
-	public void controlerPosition(){
+	public void controlerPosition(Etudiant etudiant){
 		if (vue != null){
-			if(etudiant.getPositionEtudiant() < 40){
+			if(jeu.getPositionEtudiant(etudiant) < 40){
 			}
 			else {
-				etudiant.setPositionEtudiant(etudiant.getPositionEtudiant() - 40);
+				jeu.setPositionEtudiant(etudiant, jeu.getPositionEtudiant(etudiant) - 40);
 			}
 		}
 	}
