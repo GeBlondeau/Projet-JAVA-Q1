@@ -22,8 +22,6 @@ public class Case extends Observable{
 	}
 	public void setProprietaire(Etudiant proprietaire) {
 		this.proprietaire = proprietaire;
-		setChanged();
-		notifyObservers();
 	}
 	public String getNomCase() {
 		return nomCase;

@@ -32,17 +32,25 @@ public class Etudiant extends Observable {
 	public String getNomEtudiant() {
 		return nomEtudiant;
 	}
+	public boolean getJeuEtudiant() {
+		return jeuEtudiant;
+	}
+	public void setJeuEtudiant(boolean jeuEtudiant) {
+		this.jeuEtudiant = jeuEtudiant;
+	}
 
 	private int ects;
 	private int etatPrison;
 	private int positionJoueur;
 	private String nomEtudiant;
+	private boolean jeuEtudiant;
 
-	public Etudiant(int ects, int etatPrison, int positionJoueur, String nomEtudiant){
+	public Etudiant(int ects, int etatPrison, int positionJoueur, String nomEtudiant, boolean jeuEtudiant){
 		this.ects = ects;
 		this.etatPrison = etatPrison;
 		this.positionJoueur = positionJoueur;
 		this.nomEtudiant = nomEtudiant;
+		this.jeuEtudiant = jeuEtudiant;
 	}
 	
 	public int lanceDes(){

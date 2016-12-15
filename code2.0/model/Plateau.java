@@ -17,13 +17,7 @@ public class Plateau extends Observable{
 	private void remplirListe(Case cour){
 		listeCase.add(cour);
 	}
-	public void positionEtudiant(Plateau plateau, Etudiant etudiant){
-		if(etudiant.getPositionEtudiant() < 40);
-		else{
-			etudiant.setPositionEtudiant(etudiant.getPositionEtudiant()-40);
-			etudiant.setEcts(15);
-		}
-	}
+	
 	public void creationPlateau(){
 		remplirListe(C0);
 		remplirListe(C1);
@@ -70,7 +64,7 @@ public class Plateau extends Observable{
 	}
 	
 	// Plateau Ephecopoly
-			Case C0=new Case(0,15,null,"Case de départ",0,false);
+			Case C0=new Case(0,25,null,"Case de départ",0,false);
 		//Premiere ligne
 							//Prix d'achats, prix du loyer, propriétaire, nom de la case, position 
 			Case C1=new Case(10,3,null,"Introduction télécom",1,true);
