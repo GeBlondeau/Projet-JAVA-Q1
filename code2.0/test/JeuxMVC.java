@@ -8,13 +8,10 @@ public class JeuxMVC {
 	public JeuxMVC(){
 		// Création du modèle
 		Jeux jeu = new Jeux();
-		Etudiant etudiant = new Etudiant(0, 0, 0, null);
-		Case cours = new Case(0, 0, etudiant, null, 0, false);
-		Plateau plateau = new Plateau();
 		//Création des contrôleurs : Un pour chaque vue
 		//Chaque contrôleur doit avoir une référence vers le modèle pour pouvoir le commander
-		JeuxController jeuControlConsole = new JeuxController(jeu, etudiant, cours, plateau);
-		JeuxController jeuControlGui = new JeuxController(jeu, etudiant, cours, plateau);
+		JeuxController jeuControlConsole = new JeuxController(jeu);
+		JeuxController jeuControlGui = new JeuxController(jeu);
 		//Création des vues.
 		//Chaque vue doit connaître son contrôleur et avoir une référence vers le modèle pour pouvoir l'observer
 		JeuxVueConsole console = new JeuxVueConsole(jeu, jeuControlConsole);
