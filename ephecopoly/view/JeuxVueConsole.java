@@ -29,11 +29,35 @@ public class JeuxVueConsole extends JeuxVue implements Observer {
 	
 	private class ReadInput implements Runnable{
 		public void run() {
-			Jeux jeu = new Jeux();
-			Plateau plateau = new Plateau();
-			
-			jeu.lancerJeu();
-			jeu.creationPlateau(plateau);
+				Jeux jeu = new Jeux();
+				Plateau plateau = new Plateau();
+				jeu.creationPlateau(plateau);
+				affiche(jeu, "Bienvenue dans cette partie d'éphecopoly." );
+				affiche(jeu, "Une partie d'ephecopoly compte entre 2 et 6 étudiants.");
+				affiche(jeu, "Veuillez indiquer le nombre d'étudiants participant au jeu.");
+				boolean entreCorrect = true;
+				int nbrEtudiant = 0;
+				while(entreCorrect){	
+					nbrEtudiant = sc.nextInt();
+					if (nbrEtudiant >= 2 && nbrEtudiant <= 6){
+						entreCorrect = false;
+					}
+				}
+				affiche(jeu, "Il y aura " + nbrEtudiant + " joueurs dans cette partie, "
+							+ "leur nom devra comporter entre 4 et 10 caractères.");
+				for (int i = 1; i <= nbrEtudiant; i++ ){
+					affiche(jeu, "Veuillez écrire le nom de l'étudiant n°" + i);
+					entreCorrect = true;
+					while(entreCorrect){
+						String nouvelEtudiant = sc.nextLine();
+						if (nouvelEtudiant.length() >= 4 && nouvelEtudiant.length() <= 10){
+							Etudiant etudiant = new Etudiant(100, 0, 0,nouvelEtudiant, true, false);
+							jeu.remplirListe(etudiant);
+							entreCorrect = false;
+						}
+					}
+				}	
+				
 				while(true){
 					jeu.setJeuString(null);
 					for (Etudiant etudiant: jeu.getListeEtudiant()){
