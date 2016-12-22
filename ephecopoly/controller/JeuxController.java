@@ -1,5 +1,9 @@
 package ephecopoly.controller;
 
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import ephecopoly.model.*;
 import ephecopoly.view.*;
 
