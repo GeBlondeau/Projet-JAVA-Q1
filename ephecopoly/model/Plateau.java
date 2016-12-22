@@ -16,7 +16,7 @@ public class Plateau extends Observable{
 	/*
 	 *  Méthode qui permet de remplir la liste des cases avec la case passer en paramètre.
 	 */
-	private void remplirListe(Case cours){
+	public void remplirListe(Case cours){
 		listeCase.add(cours);
 	}
 	

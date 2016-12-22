@@ -13,7 +13,6 @@ public class Jeux extends Observable{
 
 	
 	private static List<Etudiant> listeEtudiant = new ArrayList<Etudiant>();
-	
 	private String jeuString = null;
 	private Etudiant etudiantActuel;
 	

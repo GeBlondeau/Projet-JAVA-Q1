@@ -67,8 +67,8 @@ public class Etudiant extends Observable {
 	public int getPositionEtudiant() {
 		return positionEtudiant;
 	}
-	public void setPositionEtudiant(int positionJoueur) {
-		this.positionEtudiant = positionJoueur;
+	public void setPositionEtudiant(int positionEtudiant) {
+		this.positionEtudiant = positionEtudiant;
 	}
 	public String getNomEtudiant() {
 		return nomEtudiant;
