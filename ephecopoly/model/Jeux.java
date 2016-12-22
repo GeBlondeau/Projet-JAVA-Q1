@@ -1,5 +1,9 @@
 package ephecopoly.model;
 
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -8,11 +12,27 @@ import java.util.Observable;
 public class Jeux extends Observable{
 
 	
-	public static List<Etudiant> listeEtudiant = new ArrayList<Etudiant>();
+	private static List<Etudiant> listeEtudiant = new ArrayList<Etudiant>();
+	
 	private String jeuString = null;
 	private Etudiant etudiantActuel;
 	
+	/* 
+	 *Méthode utilisée pour mettre finà la partie d'un étudiant en particulier. 
+	 */
+	public void finDuJeu(Etudiant etudiant){
+		etudiant.setEtatJeu(false);
+	}
+	/* 
+	 * Méthode permettant de remplir la liste des joueurs au début de la partie.
+	 */
+	public void remplirListe(Etudiant joueur){
+		listeEtudiant.add(joueur);
+	}
 	
+	public void creationPlateau(Plateau plateau){
+		plateau.creationPlateau();
+	}
 	public Etudiant getEtudiantActuel() {
 		return etudiantActuel;
 	}
@@ -21,41 +41,8 @@ public class Jeux extends Observable{
 		setChanged();
 		notifyObservers();
 	}
-	public String getJeuString() {
-		return jeuString;
-	}
-	public void addJeuString(String jeuString) {
-		this.jeuString += jeuString;
-		setChanged();
-		notifyObservers();
-	}
-	public void setJeuString(String jeuString) {
-		this.jeuString = jeuString;
-		setChanged();
-		notifyObservers();
-	}
-	public void remplirListe(Etudiant joueur){
-		listeEtudiant.add(joueur);
-	}
 	public List<Etudiant> getListeEtudiant(){
 		return listeEtudiant;
-	}
-	public void lancerJeu(){
-		Jeux jeu = new Jeux();
-		Etudiant Etudiant1 = new Etudiant(0, 0, 0,"Le Bon", true, false);
-		Etudiant Etudiant2 = new Etudiant(100, 0, 0,"La Brute", true, false);
-		//Etudiant Etudiant3 = new Etudiant(100, 0, 0,"Le Truand", true, false);
-		//Etudiant Etudiant4 = new Etudiant(100, 0, 0,"Pour réussir l'année", true, false);
-		jeu.remplirListe(Etudiant1);
-		jeu.remplirListe(Etudiant2);
-		//jeu.remplirListe(Etudiant3);
-		//jeu.remplirListe(Etudiant4);
-	}
-	public void finDuJeu(Etudiant etudiant){
-		etudiant.setEtatJeu(false);
-	}
-	public void creationPlateau(Plateau plateau){
-		plateau.creationPlateau();
 	}
 	public int getPrixAchat(Case cours) {
 		return cours.getPrixAchat();
@@ -121,6 +108,8 @@ public class Jeux extends Observable{
 	}
 	public void setEtatDes(Etudiant etudiant, boolean jeuEtudiant) {
 		etudiant.setEtatDes(jeuEtudiant);
+		setChanged();
+		notifyObservers();
 	}
 	public int lanceDes(Etudiant etudiant){
 		return etudiant.lanceDes();
@@ -131,6 +120,19 @@ public class Jeux extends Observable{
 	}
 	public Case getCase(Etudiant etudiant, Jeux jeu, Plateau plateau){
 		return plateau.getCase(etudiant, jeu);
+	}
+	public String getJeuString() {
+		return jeuString;
+	}
+	public void addJeuString(String jeuString) {
+		this.jeuString += jeuString;
+		setChanged();
+		notifyObservers();
+	}
+	public void setJeuString(String jeuString) {
+		this.jeuString = jeuString;
+		setChanged();
+		notifyObservers();
 	}
 	public static void main(String[] args){
 		

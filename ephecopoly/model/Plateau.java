@@ -1,5 +1,9 @@
 package ephecopoly.model;
 
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -7,19 +11,18 @@ import java.util.Observable;
 
 public class Plateau extends Observable{
 	
-	public static List<Case> listeCase = new ArrayList<Case>();
+	private static List<Case> listeCase = new ArrayList<Case>();
 	
-	
-	public List<Case> getListeCase() {
-		return listeCase;
-	}
-	public Case getCase(Etudiant etudiant, Jeux jeu){
-		return listeCase.get(jeu.getPositionEtudiant(etudiant));
-	}
+	/*
+	 *  Méthode qui permet de remplir la liste des cases avec la case passer en paramètre.
+	 */
 	private void remplirListe(Case cours){
 		listeCase.add(cours);
 	}
 	
+	/*
+	 *  Méthode créant le "plateau" de jeu en le remplissant avec des cases
+	 */
 	public void creationPlateau(){
 		remplirListe(C0);
 		remplirListe(C1);
@@ -64,11 +67,18 @@ public class Plateau extends Observable{
 		setChanged();
 		notifyObservers();
 	}
+	public List<Case> getListeCase() {
+		return listeCase;
+	}
+	public Case getCase(Etudiant etudiant, Jeux jeu){
+		return listeCase.get(jeu.getPositionEtudiant(etudiant));
+	}
 	
-	// Plateau Ephecopoly
+	// Création des cases du plateau
+		// Plateau Ephecopoly
 			Case C0=new Case(0,25,null,"Case de départ",0,false);
 		//Premiere ligne
-							//Prix d'achats, prix du loyer, propriétaire, nom de la case, position 
+						//Prix d'achats, prix du loyer, propriétaire, nom de la case, position, achetable
 			Case C1=new Case(10,3,null,"Introduction télécom",1,true);
 			Case C2=new Case(0,2,null,"Interrogation",2,false);
 		    Case C3=new Case(7,2,null,"Télécommunication",3,true);
