@@ -1,5 +1,9 @@
 package ephecopoly.view;
 
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Observable;
@@ -50,7 +54,9 @@ public class JeuxVueGraphique extends JeuxVue{
 	}
 	public void build(){
 		
-		// blocage des boutons pendant la création de la fenêtre
+		/*
+		 *  blocage des boutons pendant la création de la fenêtre
+		 */
 		oui.setEnabled(false);
 		lance.setEnabled(false);
 		non.setEnabled(false);
@@ -60,7 +66,9 @@ public class JeuxVueGraphique extends JeuxVue{
 		b5.setEnabled(false);
 		b6.setEnabled(false);
 		
-		// paramétrage de la fenêtre
+		/*
+		 *  paramétrage de la fenêtre
+		 */
 		ephecopoly.setSize (1000, 600);
 		ephecopoly.setLocation(500, 250);
 		ephecopoly.setLocationRelativeTo(null);
@@ -68,22 +76,30 @@ public class JeuxVueGraphique extends JeuxVue{
 		ephecopoly.setAlwaysOnTop(false);
 		ephecopoly.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-		// création de la boite à layout principale
+		/*
+		 *  création de la boite à layout principale
+		 */
 		Box main = Box.createHorizontalBox();
 		// on met la boite dans la fenêtre
 		Container contentpane = ephecopoly.getContentPane();
 		contentpane.add(main);
 				
-		// création de la boite à layout horizontal box
+		/*
+		 *  création de la boite à layout horizontal box
+		 */
 		Box box = Box.createHorizontalBox();
 		main.add(box);
 		
-		// création de la boite à layout vertical à gauche
+		/*
+		 *  création de la boite à layout vertical à gauche
+		 */
 		Box left = Box.createVerticalBox();
 		left.setPreferredSize(new Dimension(700, 600));
 		box.add(left);
 		
-		// paramétrage de la zone d'affichage de texte en haut à gauche 
+		/*
+		 *  paramétrage de la zone d'affichage de texte en haut à gauche 
+		 */
 		textArea.setPreferredSize(new Dimension(700, 570));
 		textArea.setBackground(Color.orange);
 		textArea.setEditable (false);
@@ -91,12 +107,16 @@ public class JeuxVueGraphique extends JeuxVue{
 		textArea.setWrapStyleWord(true);
 		left.add(textArea);
 		
-		// création de la boite à layout horizontal en bas à gauche
+		/*
+		 *  création de la boite à layout horizontal en bas à gauche
+		 */
 		Box bottomleft = Box.createHorizontalBox();
 		bottomleft.setPreferredSize(new Dimension(700, 30));
 		left.add(bottomleft);
 		
-		// paramétrage des différents boutons à gauche
+		/*
+		 *  paramétrage des différents boutons à gauche
+		 */
 		bottomleft.add(nomEtudiant);
 		bottomleft.add(b2);
 		bottomleft.add(b3);
@@ -122,24 +142,32 @@ public class JeuxVueGraphique extends JeuxVue{
 			  }
 		});
 			
-		// création de la boite à layout vertical à droite
+		/*
+		 *  création de la boite à layout vertical à droite
+		 */
 		Box right = Box.createVerticalBox();
 		right.setPreferredSize(new Dimension(300, 600));
 		box.add(right);
 				
-		// paramétrisation de la zone d'affichage du chat à droite
+		/*
+		 *  paramétrisation de la zone d'affichage du chat à droite
+		 */
 		chatArea.setPreferredSize(new Dimension(300, 520));
 		chatArea.setBackground(Color.blue);
 		chatArea.setEditable (false); 
 		right.add(chatArea);
 		
-		// paramétrisation de la zone d'écriture du chat à droite
+		/*
+		 *  paramétrisation de la zone d'écriture du chat à droite
+		 */
 		chatEcrit.setPreferredSize(new Dimension(300, 50));
 		chatEcrit.setBackground(Color.white);
 		chatEcrit.setEditable (true); 
 		right.add(chatEcrit);
 						
-		// paramétrisation du bouton à droite
+		/*
+		 *  paramétrisation du bouton à droite
+		 */
 		right.add(parler);
 		parler.addActionListener(new ActionListener(){
 			  public void actionPerformed(ActionEvent event){
@@ -147,10 +175,14 @@ public class JeuxVueGraphique extends JeuxVue{
 			  }
 		});
 		
-		// affichage de la fenêtre
+		/*
+		 *  affichage de la fenêtre
+		 */
 		ephecopoly.setVisible(true);
 		
-		// délocage des boutons une fois que la fenêtre est visible
+		/*
+		 *  délocage des boutons une fois que la fenêtre est visible
+		 */
 		oui.setEnabled(true);
 		lance.setEnabled(true);
 		non.setEnabled(true);

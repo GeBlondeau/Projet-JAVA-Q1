@@ -1,4 +1,9 @@
 package ephecopoly.view;
+
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import java.util.Observer;
 
 import ephecopoly.controller.JeuxController;

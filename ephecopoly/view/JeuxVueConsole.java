@@ -1,5 +1,9 @@
 package ephecopoly.view;
 
+/*
+ * @author Lambin N., Blondeau G.
+ */
+
 import java.util.InputMismatchException;
 import java.util.Observable;
 import java.util.Observer;
@@ -35,6 +39,9 @@ public class JeuxVueConsole extends JeuxVue implements Observer {
 				affiche(jeu, "Bienvenue dans cette partie d'éphecopoly." );
 				affiche(jeu, "Une partie d'ephecopoly compte entre 2 et 6 étudiants.");
 				affiche(jeu, "Veuillez indiquer le nombre d'étudiants participant au jeu.");
+				/*
+				 *  on demande le nombre de participant.
+				 */
 				boolean entreCorrect = true;
 				int nbrEtudiant = 0;
 				while(entreCorrect){	
@@ -45,6 +52,9 @@ public class JeuxVueConsole extends JeuxVue implements Observer {
 				}
 				affiche(jeu, "Il y aura " + nbrEtudiant + " joueurs dans cette partie, "
 							+ "leur nom devra comporter entre 4 et 10 caractères.");
+				/*
+				 *  on demande le nom de chaque particpant.
+				 */
 				for (int i = 1; i <= nbrEtudiant; i++ ){
 					affiche(jeu, "Veuillez écrire le nom de l'étudiant n°" + i);
 					entreCorrect = true;
@@ -57,7 +67,9 @@ public class JeuxVueConsole extends JeuxVue implements Observer {
 						}
 					}
 				}	
-				
+				/*
+				 *  commencement de la partie.
+				 */
 				while(true){
 					jeu.setJeuString(null);
 					for (Etudiant etudiant: jeu.getListeEtudiant()){
