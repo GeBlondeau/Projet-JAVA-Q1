@@ -14,9 +14,15 @@ public class JeuxVueGraphique extends JeuxVue{
 
 	private JFrame ephecopoly = new JFrame ("Ephecopoly");
 	private JTextArea textArea = new JTextArea ("Bienvenue dans cette partie d'Ephecopoly \n");
-	private JButton etudier = new JButton ("Etudier le cours");
+	private JButton oui = new JButton ("Oui");
 	private JButton lance = new JButton ("Lancer les dés");
-	private JButton rien = new JButton ("Ne rien faire");
+	private JButton non = new JButton ("Non");
+	private JButton b2 = new JButton("2");
+	private JButton b3 = new JButton("3");
+	private JButton b4 = new JButton("4");
+	private JButton b5 = new JButton("5");
+	private JButton b6 = new JButton("6");
+	private JTextArea nomEtudiant = new JTextArea();
 	private JTextArea chatArea = new JTextArea ("chat");
 	private JTextArea chatEcrit = new JTextArea (" Pour écrire dans le chat écriver ici");
 	private JButton parler = new JButton ("Ecrire dans le chat");
@@ -45,9 +51,14 @@ public class JeuxVueGraphique extends JeuxVue{
 	public void build(){
 		
 		// blocage des boutons pendant la création de la fenêtre
-		etudier.setEnabled(false);
+		oui.setEnabled(false);
 		lance.setEnabled(false);
-		rien.setEnabled(false);
+		non.setEnabled(false);
+		b2.setEnabled(false);
+		b3.setEnabled(false);
+		b4.setEnabled(false);
+		b5.setEnabled(false);
+		b6.setEnabled(false);
 		
 		// paramétrage de la fenêtre
 		ephecopoly.setSize (1000, 600);
@@ -72,7 +83,7 @@ public class JeuxVueGraphique extends JeuxVue{
 		left.setPreferredSize(new Dimension(700, 600));
 		box.add(left);
 		
-		// paramétrage d'une zone d'affichage de texte à gauche 
+		// paramétrage de la zone d'affichage de texte en haut à gauche 
 		textArea.setPreferredSize(new Dimension(700, 570));
 		textArea.setBackground(Color.orange);
 		textArea.setEditable (false);
@@ -80,26 +91,32 @@ public class JeuxVueGraphique extends JeuxVue{
 		textArea.setWrapStyleWord(true);
 		left.add(textArea);
 		
-		// création de la boite à layout horizontal à gauche en bas
+		// création de la boite à layout horizontal en bas à gauche
 		Box bottomleft = Box.createHorizontalBox();
 		bottomleft.setPreferredSize(new Dimension(700, 30));
 		left.add(bottomleft);
 		
-		// paramétrisation des différents boutons à gauche
-		bottomleft.add(etudier);
-		etudier.addActionListener(new ActionListener(){
-			  public void actionPerformed(ActionEvent event){
-			    System.out.println("Oui");
-			  }
-		});
+		// paramétrage des différents boutons à gauche
+		bottomleft.add(nomEtudiant);
+		bottomleft.add(b2);
+		bottomleft.add(b3);
+		bottomleft.add(b4);
+		bottomleft.add(b5);
+		bottomleft.add(b6);
 		bottomleft.add(lance);
 		lance.addActionListener(new ActionListener(){
 			  public void actionPerformed(ActionEvent event){
 			    controller.setEtatDes(jeu, jeu.getEtudiantActuel(), true);
 			  }
 		});
-		bottomleft.add(rien);
-		rien.addActionListener(new ActionListener(){
+		bottomleft.add(oui);
+		oui.addActionListener(new ActionListener(){
+			  public void actionPerformed(ActionEvent event){
+			    System.out.println("Oui");
+			  }
+		});
+		bottomleft.add(non);
+		non.addActionListener(new ActionListener(){
 			  public void actionPerformed(ActionEvent event){
 			    System.out.println("Non");
 			  }
@@ -134,9 +151,14 @@ public class JeuxVueGraphique extends JeuxVue{
 		ephecopoly.setVisible(true);
 		
 		// délocage des boutons une fois que la fenêtre est visible
-		etudier.setEnabled(true);
+		oui.setEnabled(true);
 		lance.setEnabled(true);
-		rien.setEnabled(true);
+		non.setEnabled(true);
+		b2.setEnabled(true);
+		b3.setEnabled(true);
+		b4.setEnabled(true);
+		b5.setEnabled(true);
+		b6.setEnabled(true);
 	}
 	public static void main(String[] args){
 	}
