@@ -45,9 +45,14 @@ public class JeuxVueConsole extends JeuxVue implements Observer {
 				boolean entreCorrect = true;
 				int nbrEtudiant = 0;
 				while(entreCorrect){	
-					nbrEtudiant = sc.nextInt();
-					if (nbrEtudiant >= 2 && nbrEtudiant <= 6){
-						entreCorrect = false;
+					try{
+						nbrEtudiant = Integer.parseInt(sc.nextLine());
+						if (nbrEtudiant >= 2 && nbrEtudiant <= 6){
+							entreCorrect = false;
+						}
+					}
+					catch(NumberFormatException e){
+						affiche(jeu, "Veuillez indiquer un nombre entre 2 et 6.");
 					}
 				}
 				affiche(jeu, "Il y aura " + nbrEtudiant + " joueurs dans cette partie, "
